@@ -1,17 +1,23 @@
 <html>
 <head>
     <title>Meu primeiro HTML</title>
+    <style>
+        img{width: 300px;
+            border-radius: 50%;
+        }
+        p{color: blue;}
+        h1{color: red;}
+        ul{background-color: lightgrey; 
+            padding: 20px;}
+        
+        td,table,th{border: 1px solid black;
+                 border-collapse: collapse;
+                }
+    </style>
 </head>
 <body>
     <!-- isto é um comentário-->
-    <h1>Titulo de nível 1</h1>
-    <h2>Titulo de nível 2</h2>
-    <h3>Titulo de nível 3</h3>
-    <h4>Titulo de nível 4</h4>
-    <h5>Titulo de nível 5</h5>
-    <h6>Titulo de nível 6</h6>
-    <p>Isto é um paragrafo</p>
-    <span>isto é só um texto</span>
+
     <hr>
     <p>Lorem <em>ipsum</em> dolor <strong>sit amet</strong> consectetur adipisicing 
         <b>assad</b> elit. Dolore accusantium quis illum cum magnam, magni aspernatur 
@@ -24,11 +30,95 @@
             <li>git log - exibe os commits dos nosso respositório local</li>
             <li>git log --oneline --all --graph</li>
             <li>git status - exibe o estado <strong>WK</strong></li>
-            <li>git checkout -b nova-branch<li>
-            </li> branch|hash - cria uma nova branch apontoando para a branch ou hash informado </li>
+            <li>git checkout -b nova-branch</li>
+            <li>branch|hash - cria uma nova branch apontoando para a branch ou hash informado </li>
             <li>git reset --hard - restaura os arquivos traleados ao estado do HEAD</li>
             <li>git config user.name="Nome"</li>
             <li>git config user.email="Email"</li>
         </ul>
-</body>
+        <hr>
+        <h1>Titulo de nível 1</h1>
+        <h2>Titulo de nível 2</h2>
+        <h3>Titulo de nível 3</h3>
+        <h4>Titulo de nível 4</h4>
+        <h5>Titulo de nível 5</h5>
+        <h6>Titulo de nível 6</h6>
+        <p>Isto é um paragrafo</p>
+        <span>isto é só um texto</span>
+
+        <h1>Listas</h1>
+        <p>o html possui listas não ordernadas e listas orfenadas, as lista ordenadas não ordenadas são definidas com a tag &lt;ul&gt; enquanto usamos &lt;ol&gt; para listas ordenadas. <p>
+        
+        <ul>
+            <li>Panqueca</li>
+            <li>Pera</li>
+            <li>Uva</li>
+            <li>maça</li>
+        </ul>
+        <ol start="5" type>
+            <li>Panqueca</li>
+            <li>Pera</li>
+            <li>Uva</li>
+            <li>maça</li>
+        </ol>
+        <dl>
+            <dt>Café</dt>
+            <dd>Bebida fundamental a vida!</dd>
+            <dt>Água</dt>
+            <dd>Segunda bebida fundamental a vida!</dd>
+        </dl>
+
+        <h1>Tags de formatação de texto</h1>
+        <p>Lorem <strong> dolor</strong>, 
+            10<sub>2</sub>=2<sub>10</sub>
+            <sub>sit</sub> <sup>amet</sup> 
+            consectetur adipisicing elit. Error consequuntur fugiat mollitia inventore? Minus accusantium impedit <mark>necessitatibus quae</mark> non similique explicabo enim, hic laudantium blanditiis magni dolores sapiente eos sed.</p>
+
+            <h1>Link e imagens</h1>-
+             <a target= "_blank" href="https://www.google.com"> Google </a> <br>
+             <a href="https://www.google.com"> Google </a>
+
+
+             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem iure dolor recusandae facilis earum repellat asperiores ut, tempore quae sit ratione. Quibusdam, impedit? Nesciunt neque accusantium repudiandae veniam. Praesentium, soluta.</p>
+
+        </a>
+        <br>
+        <img src="./imgs/incrivel mundo gunball.avif"           
+        alt="Darwin">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFGvusqEkQBNF7gadHx4t0rXvOLYavLbZk8Q&amp;s" alt="bugou">
+        <img src="https://png.pngtree.com/png-vector/20240707/ourlarge/pngtree-3d-soccer-ball-realistic-front-view-png-image_13020161.png   " alt="bugou">
+
+        
+
+        <h1>tabelas no html</h1>
+
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>idade</th>
+                <th>Profissão</th>
+            </tr>
+            <tr>
+                <td>João</td>
+                <td>20</td>
+                <td>Estudante</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>30</td>
+                <td>Desenvolvedora</td>
+            </tr>
+        </table>
+
+    <h1>formulário</h1>
+
+    <form action="https://google.com/search">
+
+        <label for="q">Query de busca</label>
+        <input id="q" name="q" type="text">
+        <input type="submit" value="Buscar">
+
+    </form>
+
+    </body>
 </html>
