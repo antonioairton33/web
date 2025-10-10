@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-&">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario e tabelas + introdução CSS</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formularios</h1>
+    <p>o HTML possui a tag form que possibilita
+        submissão de dados informados pelo dentro do fomúlario.
+        A tag &lt;form&gt possui além dos atributos globais
+        e também atributo action="url",
+        utilizado para definir o destino dos dados submetidos.
+        <span> Exemplo:</span>
+        <pre>
+            &lt;form action="url">
+                &lt;input type="text" name="variavelA">
+            ...
+            &lt;/form>
+        </pre>
+    </p>
+
+    <h1>Table</h1>
+    <p>A tag table é utilizada para definição de tabela no HTML, internamente 
+        em uma tabela podemos criar linhas "rows"
+        utilizando a tag &lt;tr> e celulas
+        dentro das linhas utilziando a tag &lt;td> <span>exemplo:</span>
+    </p>
+
+    <pre>
+        &lt;table>
+            &lt;tr>
+                &lt;td> Celula 1x1 &lt;/td> Celula 1x2 &lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td> Celula 2x1 &lt;/td> Celula 2x2 &lt;/td>
+            &lt;/table>
+        &lt;/table>    
+    </pre>
+    <span>O código anterior define a tabela abaixo</span>
+    <table>
+        <tr>
+            <td>Celula 1x1</td> <td>Celular 1x2</td>
+        </tr>
+        <tr>
+            <td>Celular 2x1</td> <td>Celular 2x2</td>
+        </tr>
+    </table>
+    <p>Além</p>
+
+    <table>
+        <tr>
+            <td rowspan="3"> Carnes</td>
+            <td>Item</td>
+            <td colspan="2">Intem churrasco</td>
+            
+            <td>Valor</td>
+
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Carne</td>
+            <td>5KG</td>
+            <td>R$200</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Frango</td>
+            <td>2KG</td>
+            <td>R$40</td>
+        </tr>
+        <tr>
+            <td rowspan="2"> Bebidas</td>
+            <td>4</td>
+            <td>Cachaça</td>
+            <td>2L</td>
+            <td>R$40</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Cachaça</td>
+            <td>2L</td>
+            <td>R$40</td>
+        </tr>
+    </table>
+
+    <iframe src="https://sigaa.ifsc.edu.br/sigaa/public/home.jsf" frameborder="0"
+    width="100%" height="700px"></iframe>
+
+</body>
+</html>
+
