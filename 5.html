@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- CSS EXTERNO-->
+    <title>Document</title>
+    <style>
+        /* CSS incorporado ao Documento Html*/
+        p{color: blue;}
+    </style>
+    <title>CSS</title>
+</head>
+<body>
+    
+    <p style="color: red;">lorem</p>
+    <h1>Formas de declarar CSS no documento HTML</h1>
+    <ul>
+        <li>Externo - por meio da tag &lt; link rel ="stylesheet" href="style.css"</li>
+        <li>
+            Incorporado - por meio da tag &lt;style no cabeçalho do nosso documento HTML
+        </li>
+        <li>
+            Inline - por meo do atributo style em qualquer tag html
+        </li>
+        <li>
+            ** por meio da arvore DOM via JavaScript (JS)
+        </li>
+    </ul>
+<script>
+    let p =document.querySelector("p");
+    p.style.color="#FFAABB";
+</script>
+
+
+</body>
+</html>
