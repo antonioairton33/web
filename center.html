@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            height: 150vh;
+            
+            animation: rotacao 100s linear infinite;
+        }
+        #foguete{
+            font-size: 100px;
+            animation: subir 5s ease-in-out infinite;
+        }
+         @keyframes subir {
+            0% {
+                transform:  translateY(100vh);
+            }
+            to{
+                transform:  translateY(0vh);
+            }
+        }
+
+        .box{
+            border-radius: 50%;
+            border: 20px solid #faabbf;
+            background-color: #AAAAAA;
+            width: 100px;
+            font-size: 4rem;
+            height: 100px; 
+            flex-shrink: 0;
+            animation: rotacao 1s linear infinite;
+        }
+        @keyframes rotacao {
+            from{
+                transform:  rotate(0deg);
+            }
+            to{
+                transform:  rotate(360deg);
+            }
+        }
+
+        .box{border-top-color: #00ff00;
+            border-right-color: #0000ff;
+            border-bottom-color: #ff0000;
+            border-left-color: #fff000;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    
+    <div class="box" id="item1">🚀</div>
+    <div class="box" id="item2">2</div>
+    <div class="box" id="item3">3</div>
+    <div class="box" id="item4">4</div>
+    <div id="foguete">🚀</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 - FLEX</title>
+    <style>
+        .container{
+            display: flex;
+            /* flex-direction: column; */
+            flex-direction: row;
+            /* justify-content: center; */
+            /* justify-content: space-around; */
+            /*justify-content: space-between; */ /*Espaços entre os elementos tirando as bordas da div principal*/
+            justify-content: space-evenly;  /* Espaços iguais entre os elementos */
+            align-items: center;
+            flex-wrap: wrap; /*quebra linha*/
+            /*flex-wrap: nowrap;*/ /*não quebra linha*/
+            border: 1px solid red;
+            height: 100vh;
+        }
+        .box{ flex-shrink: 0;}
+        .box{
+            border: 1px solid #AAAAAA;
+            display: block;
+            height: 100px;
+            width: 100px;
+            /* margin-top: 5px; */
+        }
+        #box2{
+            /*flex-shrink: 0;*/ /*Não sede na hora de se ajustar*/
+            flex-shrink: 2; /*sede atravez da propoção informada = 2 ou 3 ou 4 ....*/
+            flex-grow: 3; /*Informa o peso */
+        }
+        #box3, #box4{
+            flex-grow: 1; /*Informa o peso */
+        }
+    </style>
+</head>
+<body>
+    <div class="voltar">
+        <a href="./index.html"><img src="./img/voltar_invertido.jpg" alt="Voltar" width="40px"></a>
+    </div>
+    
+    <!-- Geração de DIV com varias divs dentro  -  div.container>div#box$.box{$}*5 -->
+    <div class="container">
+        <div id="box1" class="box">1</div>
+        <div id="box2" class="box">2</div>
+        <div id="box3" class="box">3</div>
+        <div id="box4" class="box">4</div>
+        <div id="box5" class="box">5</div>
+        <div id="box6" class="box">6</div>
+        <div id="box7" class="box">7</div>
+        <div id="box8" class="box">8</div>
+    </div>
+
+    <H3>Variações do VH (viw height)</H3>
+    <span></span>
+</body>
+</html>

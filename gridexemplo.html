@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            height: 100vh;
+            width: 100vw;
+        }
+
+    @media screen and (max-width: 300px){
+        .container{
+            grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        }
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 800px){
+        .container{
+            grid-template-areas:
+            "header header"
+            "main sidebar"
+            "footer footer";
+        }
+    }
+
+
+/*
+    .container{
+
+        width: 100vh;
+        height: 50vh;
+
+        display: grid;
+        grid-template-areas: 
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer"
+        
+        
+        ;
+
+        
+    }
+
+    */
+    .header{
+        grid-area: header;
+        background-color: #f77002;
+    }   
+    .main{
+        grid-area: main;
+        background-color: #028df7;
+    }   
+    .sidebar{
+        grid-area: sidebar;
+        background-color: #f73302;
+    }   
+
+    .footer{
+        grid-area: footer;
+        background-color: #33f702;
+    }   
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box header">Cabeçario</div>
+        <div class="box main">Main</div>
+        <div class="box sidebar">Side Bar</div>
+        <div class="box footer">Footer</div>
+    </div>
+</body>
+</html>
