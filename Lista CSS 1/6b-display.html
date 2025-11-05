@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6bdisplay</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+            justify-content: space-around;
+        }
+
+        .box{
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box1{
+            background-color: rgb(122, 25, 250);
+        }
+        #box2{
+            background-color: rgb(18, 85, 5);
+        }
+        #box3{
+            background-color: rgb(250, 25, 25);
+        }
+        #box4{
+            background-color: rgb(248, 245, 42);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box">1</div>
+        <div id="box2" class="box">2</div>
+        <div id="box3" class="box">3</div>
+        <div id="box4" class="box">4</div>
+    </div>
+</body>
+</html>
+
+<!-- Explicação da exibição
+
+O layout mostra quatro caixas coloridas dispostas horizontalmente, ocupando toda a largura da tela.
+Isso acontece porque a div.container usa Flexbox (display: flex) no eixo principal padrão, que é horizontal.
+A propriedade justify-content: space-around distribui espaço uniforme entre as caixas, criando margens iguais nas laterais e entre os elementos.
+Cada .box utiliza display: flex com justify-content e align-items centralizados, garantindo que os números fiquem bem no centro de cada caixa.
+As cores foram aplicadas individualmente por meio dos IDs, facilitando a identificação visual.
+
+Resultado:
+
+Quatro caixas coloridas lado a lado, ocupando a largura da tela.
+
+Números centralizados dentro de cada caixa.
+
+Espaçamento uniforme entre as caixas devido ao justify-content: space-around.
+
+Layout flexível e responsivo, que se ajusta automaticamente ao tamanho da tela.
+-->
+

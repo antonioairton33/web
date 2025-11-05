@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6cdisplay</title>
+    <style>
+        .box{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 0px solid;
+            
+        }
+        
+        #box1{
+            position: fixed;
+            background-color: red;
+            top: 10px;
+            left: 10px;
+        }
+
+        #box2{
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: yellow;
+        }
+        #box3{
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: blue;
+        }
+        #box4{
+            position: fixed;
+            background-color: green;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        #box5{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: magenta;
+
+        }
+    </style>
+</head>
+<body>
+    <div> 
+
+    <div id="box1" class = "box">box1</div>
+    <div id="box2" class = "box">box2</div>
+    <div id="box3" class = "box">box3</div>
+    <div id="box4" class = "box">box4</div>
+    <div id="box5" class = "box">box5</div>
+
+    </div>
+</body>
+</html>
+
+<!-- Explicação da exibição
+
+O layout mostra cinco caixas coloridas posicionadas na tela de forma fixa.
+As quatro primeiras caixas (#box1 a #box4) estão fixas nos cantos da tela:
+- #box1 no canto superior esquerdo
+- #box2 no canto superior direito
+- #box3 no canto inferior esquerdo
+- #box4 no canto inferior direito
+
+A quinta caixa (#box5) está centralizada tanto horizontal quanto verticalmente usando:
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+Cada .box tem largura e altura fixas de 100px e cores diferentes aplicadas pelos IDs, permitindo fácil identificação visual.
+
+Resultado:
+
+- Quatro caixas nos cantos da tela.
+- Uma caixa centralizada no meio da tela.
+- Todas as caixas têm tamanho fixo e cores distintas.
+- Layout responsivo no sentido de manter os elementos posicionados independentemente do redimensionamento da janela.
+-->
+

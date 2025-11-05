@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p{
+            font-size: 25px;
+        }
+    </style>
+    <title>explicação das regras</title>
+</head>
+<body>
+    <h2>Porque cada regra foi aplicada?</h2>
+    <img src="../imgs/regra1.png" alt="regra">
+    <h2>Dentro do &lt;style&gt;:</h2>
+    <p>
+        <strong>Regra 1:</strong>  foi utilizado para a tag &lt;li&gt;
+        e define que os elementos que receber essa tag 
+        tenham a cor vermelha.
+    </p>
+    <p>
+        <strong>Regra 2:</strong> foi utilizado para que o elemento que tiver a classe .churros receba a cor verde.
+    </p><p>
+        <strong>Regra 3:</strong> foi utilizado para que o elemento que tiver a classe .churros receba a cor cinza.
+    </p><p>
+        <strong>Regra 4:</strong>   define que apenas os elementos que tiverem a classe .churras recebam a cor preto, mas apenas depois da próxima  tag &lt;li&gt; 
+    </p><p>
+        <strong>Regra 5:</strong>  foi utilizado  para que apenas o elemento que tenha a classe .churras 
+        receba a cor magenta, mas apenas os elementos que tiverem o draggable=true também.
+    </p><p>
+        <strong>Regra 6:</strong> define que os elementos que tiverem o id=lip1, id=lip2, id=lip3 ou id=lip4  recebam a cor azul.
+    </p><p>
+        <strong>Regra 7:</strong> foi utilizado para que apenas os elementos que tenha o id=lip3 e classe .fruta recebam a cor orange.
+    </p><p>
+        <strong>Regra 8:</strong> Define e Seleciona  &lt;ol&gt; os &lt;li&gt; que são filho imediatos de &lt;ol&gt;, seleciona também apenas o &lt;li&gt; que tem classe .churras  e id=lip5.
+    </p>
+    <hr> <br>
+    <img src="../imgs/item1.png" alt="item">
+
+    <h2>Dentro do &lt;body&gt;:</h2>
+
+    <p>
+        <strong>Item 1:</strong> recebeu a cor vermelho, porque não existe regra para o id=lip0, então recebeu a regra que foi aplicada a tag &lt;li&gt;.
+    </p>
+    <p>
+        <strong>Item 2:</strong> recebeu a cor cinza, porque foi definido essa regra para classe .fruta e tem peso maior que apenas a mudança geral da tag &lt;li&gt;.
+    </p><p>
+        <strong>Item 3:</strong> recebeu a cor azul, porque foi definido essa regra para o id=lip2 e tem peso maior que a classe .fruta.
+    </p><p>
+        <strong>Item 4:</strong> recebeu a cor laranja, porque a o id=lip3 e classe .fruta foi definido juntos, por isso tem o peso maior.
+    </p><p>
+        <strong>Item 5:</strong>  recebeu a cor cinza de acordo com sua classe .fruta, porque não tem regra definida para o id=lip4.
+    </p><p>
+        <strong>Item 6:</strong> recebeu a cor preto, porque a a regra define que para a classe .churras e após a próxima tag &lt;li&gt; a cor seja preto 
+    </p><p>
+        <strong>Item 7:</strong> recebeu a cor preto, por causa da mesma regra que define o Item 6 que para a classe .churras e após a próxima tag &lt;li&gt; a cor seja preto,
+    </p><p>
+        <strong>Item 8:</strong> recebeu a cor magente, porque a regra define que quando houver class .churros junto a um draggable=true está seja a cor, já que não tem nada definido para o id=lip7.
+        <hr>
+    <h2>Resultado:</h2>
+    <img src="../imgs/resaultado.png" alt="resultado">
+
+</body>
+</html>
+
