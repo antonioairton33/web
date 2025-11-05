@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+    <title>HTTP</title>
+    <style>
+        mark{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>🔗HTTP E SEU FUNCIONAMENTO🔗</h2>
+        <br>
+        <p>
+            <h3>O que é HTTP?</h3>
+            <ul>
+            <li>O HTTP (HyperText Transfer Protocol) é o protocolo utilizado haver uma comunicação entre clientes (como os navegadores) e servidores na web. Isso define como as informações são solicitadas, enviadas e recebidas. <br>
+            
+
+            Um jeito fácil de entender é, sempre que você acessa um site, envia um formulário até mesmo quando clica em um link, o  navegador  envia uma requisição HTTP e o servidor responde com uma resposta HTTP. <br>
+
+            O HTTP é sem estado (stateless), ou seja, cada requisição é independente. Para manter informações entre requisições, usamos cookies ou sessões. <br>
+            </li>
+            </ul>
+            
+            <img src="https://cdn.melhoreshospedagem.com/wp/wp-content/uploads/2025/01/http-800x450.jpg" alt="http fotoa" width="600px">
+
+            <p>
+                <h3>Como o HTTP é usado na Web</h3> <br>
+
+                O HTTP funciona através de <strong>requisições e respostas</strong>. O processo básico é o seguinte: <br> 
+
+                <ol>
+                    <li>
+                        O cliente (navegador) envia uma <strong>requisição </strong> HTTP ao servidor pedindo um recurso (como uma página ou imagem).
+                    </li>    
+                    <li>
+                        O servidor recebe essa requisição, processa e envia uma <strong>resposta </strong> HTTP, que pode ser o conteúdo solicitado ou uma mensagem de erro.
+                    </li> 
+                    <li>   
+                        O cliente recebe a resposta e exibe o <strong> conteúdo </strong> (ou trata o erro).
+                    </li>
+                    <br>
+                </ol>
+                <img src="https://cdn.melhoreshospedagem.com/wp/wp-content/uploads/2025/01/como-funciona-http.jpg" alt="requisacao" width="600px">
+            </p>
+        </p>
+        <h3>Exemplo de Resquet e Response:</h3>
+        <table>
+            <tr>
+                <td>
+                        <strong>1 - Dados Requisição </strong>
+                        <ul>
+                        <li>
+                            URL de Solicitação:
+                            <mark>https://www.pudim.com.br/</mark> <br>
+                            → endereço completo requisitado.
+                        <br><br>
+                        </li>
+                        <li>
+                        
+                            Método de Solicitação: 
+                            <mark>GET</mark> <br>
+                             → método HTTP que indica que está solicitando o recurso, sem enviar dados no corpo. <br><br>
+                        </li>
+                        <li>    
+                            Código de Status: 
+                            <mark>304 Not Modified </mark><br>
+                            → status HTTP indicando que o recurso não foi modificado desde a última requisição, então o navegador pode usar a versão em cache.<br><br>
+                        </li>
+                        <li>
+                            Endereço Remoto:
+                            <mark>85.31.231.84:443</mark> <br>
+                            → endereço IP e porta do servidor que respondeu.<br><br>
+                        </li>
+                        <li>
+                            Política de Referenciador:
+                            <mark>strict-origin-when-cross-origin</mark> <br>
+                            → controla quais informações de origem são enviadas no cabeçalho Referer para proteger a privacidade em         requisições cross-origin.<br><br>
+                        </li>
+                    </ul>
+                <td>
+                    <img src="../imgs/fotos http request.png" alt="request" height="600px"></td>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <img src="../imgs/foto http response.png" alt="response" height="600px">
+                </td>
+                <td>
+                    <strong>2 - Dados Reposta </strong>
+                        <ul>
+                        <li>
+                            Date:
+                            <mark>>Wed, 05 Nov 2025 01:24:03 GMT</mark> <br>
+                            → data e hora em que o servidor enviou a resposta.<br><br>
+                        </li>
+                        <li>
+                            Etag:
+                            <mark> "65e08720-353"</mark> <br>
+                            → identificador único do recurso que ajuda na validação de cache. <br> <br>
+                        </li>
+                        <li>    
+                            Last-Modified:
+                            <mark>Thu, 29 Feb 2024 13:31:12 GMT</mark> <br>
+                            → última data em que o recurso foi modificado no servidor.<br><br>
+                        </li>
+                        <li>
+                            Referrer-Policy:
+                            <mark>same-origin </mark> <br>
+                            → controla quais informações de origem são enviadas na referência da requisição.
+                            <br><br>
+                        </li>
+                        <li>
+                            Server:
+                            <mark>nginx</mark> <br>
+                            → software de servidor web que respondeu.<br><br>
+                        </li>
+                        <li>
+                            Response: <mark>html</mark><br>
+                            → documento exibido como parte da resposta responsavel <br><br>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+</html>
