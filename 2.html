@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE2</title>
+    <style>
+        button{
+            border-radius: 1px;
+            color: white;
+            border: 3px solid black;
+            background-color: gray;
+    
+        }
+        button:hover{
+            background-color: greenyellow;
+        }
+        .boat{
+            position: absolute;
+            bottom: 25%;
+            left: -10%;
+            width: 100px;
+            height: 100px;
+            background-image: url(./img/eb09f61bce360ad4561ef4a7a905edd9-navegacao-plana-de-iate.png); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: moveBoat 10s linear infinite, sway 2s ease-in-out infinite alternate;
+            z-index: 2;
+        }
+
+        @keyframes moveBoat{
+            0% { left: -10%; }
+            100% { left: 110%; }
+        }
+        .boat::after{
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+<body>
+    <h1>O que é CSS</h1>
+    <p>
+        Uma regra CSS é um conjunto de instruções usado para definir o estilo (aparência visual) de elementos HTML em uma página.
+        Ela fala para o navegador <br>quais elementos devem seram alterados (seletor) e como eles devem ser exibidos (são as propriedades e valores)
+        Cada regra do CSS será formadobr <br> por um seletor e um bloco de declarações.
+    </p>
+    <h3>Exemplo da estrutura:</h3>
+    <p>
+        seletor { <br>
+            <ul>
+                propriedade; valor <br>
+            </ul>
+        }
+    </p>
+    <ul>
+            <li>
+                <strong>Seletor:</strong> vai referenciar qual elemento do HTML será estilizado.
+            </li>
+            <li>
+                <strong>Propriedade:</strong> Vai definir qual aspecto visual será alterado(como tamanho, cor, fonte, posição, etc).
+            </li>
+            <li>
+                <strong>Valor:</strong> É as especificação de como essa propriedade será aplicada.
+            </li>
+        </ul>
+        <h3>Exemplo prático:</h3>
+
+        <p>
+        body{ <br>
+            <ul>
+                background-color; blue;  <br>
+                color: white;<br>
+                
+            </ul>
+        }
+        <h3>Resultado:</h3>
+        <li>
+                <strong>body (Seletor):</strong> está referenciando o seletor body que será estilizado.
+            </li>
+            <li>
+                <strong>(Propriedades)</strong> que defini os aspectos visuais que seram alterados: 
+                <ul>
+                    <li>background-color </li>
+                    <li>color:</li>
+                </ul>
+            </li>
+            <li>
+                <strong>(Valores):</strong>  as especificações para suas propriedades correspondentes
+                <ul>
+                    <li>antiquewhite;</li> 
+                    <li>gray</li>
+                </ul>
+            </li>
+        </ul>  
+        <li><strong>(Mundança)</strong></li>
+        <ul>
+            <li>Mudança na cor de fundo do site</li>
+            <li>Mundaça na cor do texto para cinza</li>
+        </ul>
+        <h3>Utilização de uma (pseudoclasse)</h3>
+        <p>Mudança na cor do botão ao passar o mouse em cima.</p>
+        <button type="submit">CLICA AQUI</button>
+        <div class="sky">
+            <div class="cloud"></div>
+            <div class="sea"></div>
+            <div class="boat"></div>
+        </div>
+        <h3>A animação do barco é um exemplo que contem pseudoelemento e a utilização do @keyframes </h3>
+
+</body>
+</html>
