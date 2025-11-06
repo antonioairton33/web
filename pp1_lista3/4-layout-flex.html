@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flebox</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  body, html{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .topo{
+    background-color: #222;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 10px;
+  }
+
+  .circulo{
+    width: 20px;
+    height: 20px;
+    background-color: #00b3ad;
+    border-radius: 50%;
+  }
+
+  .principal{
+    flex: 1;
+    display: flex;
+  }
+
+  .navegacao{
+    background-color: #f5821f;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .direita{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cabecalho{
+    background-color: #00a9e0;
+    flex: 0 0 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .conteudo{
+    background-color: #6b50a2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rodape{
+    background-color: #00a9e0;
+    flex: 0 0 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="topo">
+      <div class="circulo"></div>
+      <div class="circulo"></div>
+      <div class="circulo"></div>
+    </div>
+
+    <div class="principal">
+      <div class="navegacao">NAVEGAÇÃO</div>
+
+      <div class="direita">
+        <div class="cabecalho">CABEÇALHO</div>
+        <div class="conteudo">CONTEÚDO</div>
+        <div class="rodape">RODAPÉ</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

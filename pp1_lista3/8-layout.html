@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LAYOUTS8</title>
+<style>
+  :root{
+    --bg: #efefef;
+    --card-bg: #ffffff;
+    --accent: #f89b4d; 
+    --dot1: #c9df82;   
+    --dot2: #dcbde4;   
+    --dot3: #f7a631;   
+  }
+
+
+  html,body{
+    height:100%;
+    margin:0;
+    background:var(--bg);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  .wrap{
+    min-height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 20px;
+    box-sizing:border-box;
+  }
+
+  .bar{
+    width: 75%;           
+    max-width: 900px;      
+    min-width: 320px;     
+    height: 80px;         
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    padding: 12px 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    gap: 20px;
+    align-items: center;
+  }
+
+  
+  .big{
+    height: 56px;                   
+    background: var(--accent);
+    border-radius: 6px;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.03);
+  }
+
+ 
+  .dots{
+    display:flex;
+    align-items:center;
+    gap: 22px;
+    padding-right: 6px; 
+  }
+
+  .dot{
+    width: 28px;
+    height: 28px;
+    border-radius:50%;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+  }
+
+  .dot.d1{ background: var(--dot1); }
+  .dot.d2{ background: var(--dot2); }
+  .dot.d3{ background: var(--dot3); }
+
+  
+  @media screen and (max-width: 500px){
+    .bar{
+      width: 92%;
+      max-width: none;
+      height: auto;                    
+      grid-template-columns: 1fr;     
+      gap: 12px;
+      padding: 12px;
+    }
+
+    .big{
+      width:100%;
+      height: 56px;
+    }
+
+    .dots{
+      justify-content: center; 
+      gap: 16px;
+      padding-right: 0;
+      padding-bottom: 6px;
+    }
+
+    .dot{
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .big, .dot{ user-select: none; -webkit-tap-highlight-color: transparent; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bar" role="group" aria-label="barra com retângulo e círculos">
+      <div class="big" aria-hidden="true"></div>
+
+      <div class="dots" aria-hidden="true">
+        <div class="dot d1"></div>
+        <div class="dot d2"></div>
+        <div class="dot d3"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slideshow-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.image {
+    width: 20%;
+    transition: transform 0.3s ease, z-index 0s ease 0.3s;
+    position: relative;
+}
+
+.image:hover{
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+.image img{
+    width: 100%;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.image:hover img{
+    opacity: 0.9;
+}

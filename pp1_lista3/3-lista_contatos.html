@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>listacontatos</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #b3b3b3;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding-top: 30px;
+    }
+
+    .lista-contatos {
+      background-color: #fff;
+      width: 350px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .contato {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .contato:last-child {
+      border-bottom: none;
+    }
+
+    .contato img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+
+
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info h3 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .info p {
+      font-size: 14px;
+      color: #888;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lista-contatos">
+    <div class="contato">
+      <img src="https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/07/site-vacinacao-33-anos.png" alt="Foto de contato">
+      <div class="info">
+        <h3>Linda Hart</h3>
+        <p>6765 Shady Ln Dr</p>
+      </div>
+    </div>
+
+    <div class="contato">
+      <img src="https://static.vecteezy.com/ti/fotos-gratis/t2/5346410-close-up-retrato-de-sorrindo-bonito-jovem-caucasiano-cara-olhando-para-camera-em-fundo-de-estudio-cinza-claro-isolado-foto.jpg" alt="Foto de contato">
+      <div class="info">
+        <h3>Roger Medina</h3>
+        <p>2420 Paddock Way</p>
+      </div>
+    </div>
+
+    <div class="contato">
+      <img src="https://media.istockphoto.com/id/1550525760/pt/foto/portrait-smile-and-asian-man-with-arms-crossed-casual-fashion-and-confident-guy-against-a.jpg?s=612x612&w=0&k=20&c=pq--cbEuF93xesL5AN3mLSKr_yrPOtGWbXQJd7UU6oQ=">
+      <div class="info">
+        <h3>Dean Sullivan</h3>
+        <p>6727 Airplane Ave</p>
+      </div>
+    </div>
+
+    <div class="contato">
+      <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Foto de contato">
+      <div class="info">
+        <h3>Elizabeth Austin</h3>
+        <p>6685 Blossom Hill Rd</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
