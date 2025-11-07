@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAYOUT</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            padding: 16px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: 80px 1fr;
+            gap: 12px;
+        }
+        .top-left{
+            background: yellow;
+            border-radius: 6px;
+        }
+        .top-right{
+            background: orange;
+            border-radius: 6px;
+        }
+        .big-left{
+            background: orange;
+            border-radius: 6px;
+        }
+        .right{
+            display: grid;
+            grid-template-rows: 80px 80px 1fr;
+        }
+        .circles{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .dot{
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+        .dot.a{background: blue;}
+        .dot.b{background: blue;}
+        .dot.c{background: blue;}
+        .dot.d{background: blue;}
+        .dot.e{background: blue;}
+
+        .middle{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+        }
+        
+        .small-blue{
+            background: wheat;
+            border-radius: 4px;
+        }
+        .bottom{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+        }
+
+        .pink{
+            background: pink;
+            border-radius: 6px;
+        }
+        .green{
+            background: pink;
+            border-radius: 6px;
+        }
+        .container{
+            display: grid;
+            grid-template-areas:
+            "top-left top-right"
+            "big-left right";
+            gap: 10px;
+        }
+        .top-left{grid-area: top-left;}
+        .top-right{grid-area: top-right;}
+        .big-left{grid-area: big-left;}
+        .right{grid-area: right;}
+        @media screen and (max-width: 500px){
+            .container{
+                grid-template-areas:
+                "top-left"
+                "top-right"
+                "big-left"
+                "right"
+                "circles"
+                "middle"
+                "bottom"
+                ;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-left"></div>
+        <div class="top-right"></div>
+
+        <div class="big-left"></div>
+
+        <div class="right">
+            <div class="circles">
+                <div class="dot a"></div>
+                <div class="dot b"></div>
+                <div class="dot c"></div>
+                <div class="dot d"></div>
+                <div class="dot e"></div>
+            </div>
+            <div class="middle">
+                <div class="small-blue"></div>
+                <div class="green"></div>
+            </div>
+            <div class="bottom">
+                <div class="pink"></div>
+                <div class="green"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
