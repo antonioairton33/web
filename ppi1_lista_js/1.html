@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é JavaScript?</title>
+</head>
+<body>
+    <h1 id="h1_1">O que é JavaScript?</h1>
+    <div id="div1">
+        <h3 id="h3_1">1 - Motivação para criação:</h3>
+        <p id="p1">
+            O JavaScript foi criado em 1995 para consertar a defict de interatividade das páginas web, que na época eram totalmente estáticas. Essa ideia tinha como objetivo permitir que o navegador reagisse a ações do usuário, validasse formulários e atualizar partes da página sem precisar recarregar tudo. Pensando nisso a Netscape pediu ao desenvolvedor Brendan Eich que criasse uma linguagem rápida, simples e integrada ao navegador. Assim surgiu o JavaScript, com o objetivo principal de tornar a web mais dinâmica e interativa.
+        </p>
+        <h3 id="h3_2">2 - Diferença entre execução do navegador e no servidor:</h3>
+        <h4 id="h4_1">Execução no navegador:</h4>
+        <ul id="ul1">
+            <li id="li1">O código roda no computador do usuário, dentro do navegador (Chrome, Edge, etc.).</li>
+            <li id="li2">Geralmente usa JavaScript.</li>
+            <li id="li3">Serve para interação da página, como animações, validação de formulários, menus, efeitos.</li>
+            <li id="l4">Não acessa diretamente dados sensíveis do servidor.</li>
+        </ul>
+        <h4 id="h4_2">Execução no servidor:</h4>
+        <ul id="ul2">
+            <li id="li5">O código roda no servidor, antes da página chegar ao usuário.</li>
+            <li id="li6">Pode usar várias linguagens: Node.js (JS no servidor), PHP, Python, Java, etc.</li>
+            <li id="li7">Serve para processar dados, acessar banco de dados, autenticação, regras de negócio.</li>
+            <li id="li7">Envia para o navegador apenas o resultado.</li>
+        </ul>
+        <p id="p2">
+            A execução no navegador acontece diretamente no computador do usuário e é usada para controlar a interação e o comportamento da página. Já a execução no servidor ocorre antes da página chegar ao usuário e é responsável por processar dados, acessar bancos de dados e aplicar regras da aplicação. Em resumo, o navegador lida com a parte visual e interativa, enquanto o servidor cuida da lógica e dos dados.
+        </p>
+
+        <h3 id="h3_3">3 - Conceito de sandbox no navegador:</h3>
+        <p id="p3">
+            Sandbox no navegador é um mecanismo de segurança que isola o código JavaScript, impedindo que ele acesse diretamente o sistema do usuário ou informações sensíveis. Ele roda em um ambiente limitado, com permissões controladas, para evitar que páginas maliciosas executem ações perigosas. Em resumo, o sandbox protege o usuário mantendo o código da web separado do computador real.
+        </p>
+        <h3 id="h3_4">4 - Explicação de obejtos globais como document, console e alert:</h3>
+        <p id="p4">
+            Objetos globais no JavaScript são recursos que o navegador já oferece automaticamente e que podem ser usados em qualquer parte do código.
+            Eles servem para interagir com a página, mostrar mensagens ou acessar funções internas do navegador.
+        </p>
+        <ul id="ul3">
+            <li id="li8">document: representa o documento HTML carregado. É por meio dele que o JavaScript consegue acessar e alterar elementos da página, como textos, botões, imagens e estilos.</li>
+            <li id="li9">console: é usado para exibir mensagens de teste ou depuração no console do navegador. Serve principalmente para desenvolvedores verificarem valores e identificarem erros.</li>
+            <li id="li10">alert: mostra uma janela simples com uma mensagem para o usuário. É útil para avisos rápidos, embora seja pouco usado em interfaces modernas.</li>
+        </ul>
+        <p id="p5">O document conecta o JavaScript ao HTML, o console ajuda o desenvolvedor a fazer testes, e o alert exibe mensagens diretamente para o usuário.</p>
+        <br><br><br>
+        <p id="horinha"></p>
+    </div>
+
+    
+</body>
+<script>
+    console.log("Olá amiguinho que acessou minha página.")
+    alert("Olá amiguinho! venha aprender um pouquinho de JavaScript.")
+    document.getElementById("horinha").innerHTML = new Date().toLocaleTimeString();
+</script>
+</html>
