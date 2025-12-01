@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores aleatorias</title>
+    <style>
+        body {
+            display: flex;             
+            justify-content: center;    
+            align-items: center;      
+            height: 100vh;             
+            margin: 0;
+        }
+
+        div {
+            width: 500px;
+            height: 380px;
+            margin: 5px;
+            position: relative; 
+        }
+
+        .cor-texto {
+            position: absolute;
+            bottom: 10px;       
+            width: 100%;
+            text-align: center;
+            color:  black;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div><span class="cor-texto"></span></div>
+    <div><span class="cor-texto"></span></div>
+    <div><span class="cor-texto"></span></div>
+    <div><span class="cor-texto"></span></div>
+    <div><span class="cor-texto"></span></div>
+
+    <script>
+        const divs = document.querySelectorAll("div");
+
+        document.body.addEventListener("keydown", (event) => {
+            if(event.code === "Space"){
+                divs.forEach((elemento) => {
+                    const cor = randHexColor();
+                    elemento.style.backgroundColor = cor;
+
+                    const span = elemento.querySelector(".cor-texto");
+                    span.textContent = cor.replace("#", "").toUpperCase();
+                });
+            }  
+        });
+
+        function randHexColor() {
+            const r = Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
+            const g = Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
+            const b = Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
+            return `#${r}${g}${b}`;
+        }
+    </script>
+</body>
+</html>
