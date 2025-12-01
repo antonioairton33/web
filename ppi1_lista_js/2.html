@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>varáveis e Operadores</title>
+</head>
+<body>
+    <h1>Tipos de Variáveis e Operadores</h1>
+
+    <button onclick="conta()" style="width: 100px; height: 100px; background-color: yellowgreen;">CLICK</button>
+
+    <h2>Tipos de Variáveis:</h2>
+    <p id="pstring"></p>
+    <p id="pnumber"></p>
+    <p id="pboolean"></p>
+    <p id="pundefined"></p>
+    <p id="pnull"></p>
+    <p id="pobject"></p>
+    <p id="parray"></p>
+
+    <h2>Tipos de Operações:</h2>
+    <p id="cal1"></p>
+    <p id="cal2"></p>
+    <p id="cal3"></p>
+    <p id="cal4"></p>
+    <p id="cal5"></p>
+
+</body>
+<script>
+    //funcão:
+    function conta(){
+
+    //declaração das variáveis:
+    let texto = "oi";
+    let numero = 19;
+    let ativo = false;
+    let naoDefinido;
+    let nulo = null;
+    let objeto = {nome: "Antonio", peso: 80};
+    let array = [3, 2, 1];
+
+    //apresentando os tipos na tela
+    document.getElementById("pstring").innerText = "Texto: " + typeof texto;
+    document.getElementById("pnumber").innerText = "Numero: " + typeof numero;
+    document.getElementById("pboolean").innerText = "Status: " + typeof ativo;
+    document.getElementById("pundefined").innerText = "Não Definido: " + typeof naoDefinido;
+    document.getElementById("pnull").innerText = "Nulo: " + typeof nulo;
+    document.getElementById("pobject").innerText = "Objeto: " + typeof objeto;
+    document.getElementById("parray").innerText = "Vários Valores: " + typeof array;
+
+    //declarando variaveis do calculo:
+    let cal1 = numero + texto; //concatenação
+    let cal2 = ativo * numero; //o true vira 0
+    let cal3 = texto * numero; //Nan
+    let cal4 = nulo + numero; // vira zero
+    let cal5 = naoDefinido * numero;
+
+    //exibição console
+    console.log("string + numero = ", cal1);
+    console.log("boolean + numero = ", cal2);
+    console.log("string * numero = ", cal3);
+    console.log("null + numero = ", cal4);
+    console.log("undefined + numero = ", cal5);
+
+    //apresentando os calculos na tela.
+    document.getElementById("cal1").innerText = "String + Number = " + cal1 + " ----->>>> A string permanece e ocorre uma concatenação.";
+    document.getElementById("cal2").innerText = "Boolean * Number = " + cal2 + " ----->>>> false = 0, true = 1.";
+    document.getElementById("cal3").innerText = "String * Number = " + cal3 + " ----->>>> Operação não é realizada porque strin não é numero.";
+    document.getElementById("cal4").innerText = "Null + Number = " + cal4 + " ----->>>> null passa a ser 0.";
+    document.getElementById("cal5").innerText = "Undefined + Number = " + cal5 + " ----->>>> Operação não é realizada porque Undefined não é numero.";
+    }
+
+
+</script>
+</html>
