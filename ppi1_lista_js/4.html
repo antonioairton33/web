@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortear numeros</title>
+</head>
+<body>
+    <h1>Sorteio de Números</h1>
+
+    <label>Mínimo: <input type="text" id="mini"> </label>
+    <br> <br>
+    <label>Máximo: <input type="text" id="maxi"> </label>
+    <br><br>
+
+    <button style="background-color: greenyellow; border-radius: 50px; width: 100px; height: 100px;" id="botao" onclick="sortear()">Sortear</button>
+
+    <p id="resultado"></p>
+
+    <ul id="lista"></ul>
+    
+
+    <script>
+        let historico = [];
+
+        function atualizarLista() {
+            let lista = document.getElementById("lista");
+            lista.innerHTML = "";
+
+            historico.forEach(item => {
+                let li = document.createElement("li");
+                li.textContent = `${item.valor} — sorteado ${item.qtd} vez(es)`;
+                lista.appendChild(li);
+            });
+        }        
+
+        function sortear(){
+                let rand=Math.random();
+                let min = parseInt(document.getElementById("mini").value)
+                let max = parseInt(document.getElementById("maxi").value)
+                random = Math.floor((rand * (max - min + 1)) + min);
+                console.log(random);
+
+                let item = historico.find(obj => obj.valor === random);
+                if (item) {
+                    item.qtd++;
+                } else {
+                    historico.push({ valor: random, qtd: 1 });
+                    item = historico.find(obj => obj.valor === random);
+                }
+
+                document.getElementById("resultado").innerText = 
+                random + " — já saiu " + item.qtd + " vez(es)";
+
+
+                atualizarLista();
+        }
+    </script>
+</body>
+</html>

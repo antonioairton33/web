@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindromot</title>
+</head>
+<body>
+
+    <h2>Será que é um Palíndromo? </h2>
+
+    <label>Digite a palavra para verificarmos:
+        <input type="text" id="palavra">
+    </label>
+
+    <button onclick="verificar()" style="background-color: aqua;">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificar() {
+            let texto = document.getElementById("palavra").value;
+
+            let formatado = texto.toLowerCase().replace(/\s/g, "");
+
+            let invertido = formatado.split("").reverse().join("");
+
+            if (formatado === invertido) {
+                document.getElementById("resultado").innerText =
+                    `"${texto}" é um palíndromo :)`;
+            } else {
+                document.getElementById("resultado").innerText =
+                    `"${texto}" NÃO é um palíndromo ):`;
+            }
+        }
+    </script>
+
+</body>
+</html>

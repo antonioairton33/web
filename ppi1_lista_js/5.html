@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortear numeros</title>
+</head>
+<body>
+    <h1>Verificar Números Primos</h1>
+
+    <label>Início: <input type="text" id="inicio"> </label>
+    <br> <br>
+    <label>Final: <input type="text" id="final"> </label>
+    <br><br>
+
+    <button style="background-color: blueviolet; border-radius: 20px; width: 100px; height: 100px;" id="botao" onclick="primos()">VERIFICAR</button>
+    <br><br>
+    <div id="resultado" style="font-size: large;"></div>
+
+    <script>
+        function primos() {
+
+            let inicio = parseInt(document.getElementById("inicio").value);
+            let fim = parseInt(document.getElementById("final").value);
+            let resultado = document.getElementById("resultado");
+
+            let primos = [];
+
+            for (let num = inicio; num <= fim; num++) {
+
+                if (num < 2) continue; 
+
+                let ehPrimo = true;
+
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        ehPrimo = false;
+                        break;
+                    }
+                }
+
+                if (ehPrimo) primos.push(num);
+            }
+
+            resultado.innerHTML = primos.length > 0
+                ? "Primos encontrados: " + primos.join(", ")
+                : "Nenhum número primo encontrado no intervalo.";
+        }
+    </script>
+</body>
+</html>

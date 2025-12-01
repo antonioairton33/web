@@ -6,14 +6,17 @@
     <title>IMC</title>
 </head>
 <body>
-    <p>Nome:</p>
+    <label> Nome: <br>
     <input type="text" id="nome">
-    <br>
-    <p>Peso:</p>
+    </label>
+    <br><br>
+    <label> Peso: <br>
     <input type="number" id="peso" step="0.1">
-    <br>
-    <p>Altura:</p>
+    </label>
+    <br><br>
+    <label> Altura: <br>
     <input type="number" id="altura" step="0.01">
+    </label>
     <br><br>
     
     <button onclick="Calculo()">Calcular</button>
@@ -59,22 +62,22 @@
 
         switch (true){
             case (imc < 18):
-                imgPessoa.src = "../imgs/i1.png"
+                imgPessoa.src = "./imgs/magro.png"
                 break;
             case (imc < 25):
-                imgPessoa.src = "../imgs/i2.png"
+                imgPessoa.src = "./imgs/normal.png"
                 break;
             case (imc < 30):
-                imgPessoa.src = "../imgs/i3.png"
+                imgPessoa.src = "./imgs/sobrepeso.png"
                 break;
             case (imc < 35):
-                imgPessoa.src = "../imgs/i4.png"
+                imgPessoa.src = "./imgs/obeso1.png"
                 break;
             case (imc < 40):
-                imgPessoa.src = "../imgs/i5.png"
+                imgPessoa.src = "./imgs/obeso2.png"
                 break;
             default:
-                imgPessoa.src = "../imgs/i5.png"
+                imgPessoa.src = "./imgs/obeso3.png"
         }
             
         
