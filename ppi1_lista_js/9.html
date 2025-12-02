@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    
+</head>
+<style>
+    body{
+        display: flex; /* transforma em container flexivel e permite alterar a posicao do unico filho do body que é calculadora apenas horizontal*/
+
+        justify-content: center; /* centraliza a calculadora horizontalmente*/
+
+        align-items: center; /* centraliza a calculadora verticalmente */
+
+        height: 100vh; /* ocupar toda a tela para permiter a calculadora ficar no meio*/
+
+        margin: 0; /* remove os espaçmentos */
+        background-color: bisque;
+
+    }
+
+    .divDacalculadora{
+        display: grid; /* transforma em um container grid  mais personalizavel por linhas e colunas*/
+        grid-template-rows: 100px auto; /* define duas linhas, display 100px e linha dos botões automatico*/
+
+        width: 300px; /*largura da calculadora*/
+        border-radius: 10px; /* borda arredondadas */
+
+        background-color: rgb(255, 255, 255); /* cor de fundo */
+
+    }
+
+    .divDatela{
+        display: flex; /* permite alinhar o numero facilmento horizontal*/
+        justify-content: flex-end; /* alinha o numero ao final (direita)*/
+        align-items: center; /* centraliza veticalmente */
+        padding: 0px 20px 0px 20px; /* espao interno nas laterias */
+        background-color: gray; /* cor do fundo */
+        color: white; /* cor do numero */
+        font-size: 2em; /* numero grande e visível */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px; melhorar 
+    }
+
+    .divDosbotoes{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* cada coluna tem a mesma largura 1fr fraçao do espaco disponivel */
+        gap: 10px; /* espaco entre os botoes */
+        padding: 10px; /* organiza o botoes em relaçoes a borda da calculadora */
+    }
+
+    .divDosbotoes button{
+        font-size: 1.5em; /* relativo ao elemento pai mudar fonte do botao */
+        padding: 20px; 
+        border: none; 
+        border-radius: 5px;
+        cursor: pointer; /* muda o curso ao passar em cima */
+        background-color: gainsboro; 
+    }
+
+    .divDosbotoes button:hover{
+        background-color: cadetblue;
+    }
+
+    #botaoIgual{
+        grid-row: span 4; /* ocupa 4 linhas do grid */
+        background-color: #80ef80;
+        color: white;
+    }
+
+</style>
+<body>
+    <div class="divDacalculadora">
+
+        <div class="divDatela">0</div>
+
+        <div class="divDosbotoes">
+            <button>+</button>
+            <button>-</button>
+            <button>x</button>
+            <button>/</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button id="botaoIgual">=</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <!--<button>=</button>-->
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <!--<button>=</button>-->
+
+            <button>.</button>
+            <button>0</button>
+            <button>C</button>
+            <!--<button>=</button>-->
+        </div>
+
+
+
+    </div>
+</body>
+</html>

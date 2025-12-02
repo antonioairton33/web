@@ -1,48 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divs Centralizadas</title>
-    <style>
-        body {
-            display: flex;             
-            justify-content: center;    
-            align-items: center;      
-            height: 100vh;             
-            margin: 0;
-        }
-
-        div {
-            width: 500px;
-            height: 380px;
-            margin: 5px;
-        }
-    </style>
+    <title>Busca filmes OMDB</title>
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #2b2b2b;
+        padding: 20px;
+    }
+
+    h2 {
+        color: white;
+        margin-bottom: 15px;
+    }
+    label {
+        color: white;
+    }
+    #titulo {
+        padding: 8px;
+        width: 250px;
+        border-radius: 4px;
+        border: 1px solid #aaa;
+    }
+
+    #buscar {
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        background: #0066ff;
+        color: white;
+        border-radius: 4px;
+        margin-left: 5px;
+    }
+
+    #buscar:hover {
+        background: #004dc1;
+    }
+
+    #filmes {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .filme {
+        width: 200px;
+        background: white;
+        border-radius: 6px;
+        padding: 10px;
+        text-align: center;
+        transition: transform 0.2s ease;
+    }
+
+    .filme:hover {
+        transform: scale(1.03);
+    }
+
+    .filme img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .filmeTitulo {
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+    .filmeAno {
+        color: #666;
+        margin-top: 5px;
+    }
+</style>
+
 <body>
-    <div id="div-1"></div>
-    <div id="div-2"></div>
-    <div id="div-3"></div>
-    <div id="div-4"></div>
-    <div id="div-5"></div>
+    <h2>Busca de filmes</h2>
+    <label for="titulo">Titulo do filme</label>
+    <input type="text" id="titulo" name="titulo" placeholder="Insira o título do filme.">
+    <button id="buscar">Buscar</button>
+
+    <div id="filmes"></div>
 
     <script>
-        const divs = document.querySelectorAll("div");
 
-        document.body.addEventListener("keydown", () => {
-            if(event.code ==="Space"){
-                divs.forEach((elemento) => {
-                    const cor = `rgb(${randColor()}, ${randColor()}, ${randColor()})`;
-                    elemento.style.backgroundColor = cor;
-                });
+        let inputfilmes = document.querySelector("#titulo");
+        let divResultado = document.querySelector("#filmes");
+        let buscar = document.querySelector("#buscar");
 
-            }  
-        });
 
-        function randColor() {
-            return Math.floor(Math.random() * 256);
-        }
+        buscar.addEventListener("click", () => {
+            fetch("http://www.omdbapi.com/?s=" + inputfilmes.value + "&apikey=f77bfada").then((response) => {
+                return response.json();
+            }).then((data) => {
+                console.log(data);
+
+                divResultado.innerHTML = "";
+                data.Search.forEach((filme) => {
+
+                    let divfilme = `
+                <div class="filme">
+                    <img src="${filme.Poster}" alt="${filme.Title}" class="imgPoster">
+                    <p class="filmeTitulo">${filme.Title}</p>
+                    <p class="filmeAno">${filme.Year}</p>
+                </div>`
+
+                    divResultado.innerHTML += divfilme;
+                })
+            })
+        })
+
     </script>
 </body>
+
 </html>
