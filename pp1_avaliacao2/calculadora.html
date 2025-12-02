@@ -25,11 +25,10 @@
         display: grid; /* transforma em um container grid  mais personalizavel por linhas e colunas*/
         grid-template-rows: 100px auto; /* define duas linhas, display 100px e linha dos botões automatico*/
 
-        width: 350px; /*largura da calculadora*/
-        height: 700px;
+        width: 300px; /*largura da calculadora*/
         border-radius: 10px; /* borda arredondadas */
 
-        background-color: rgb(189, 189, 189); /* cor de fundo */
+        background-color: rgb(255, 255, 255); /* cor de fundo */
 
     }
 
@@ -38,8 +37,8 @@
         justify-content: flex-end; /* alinha o numero ao final (direita)*/
         align-items: center; /* centraliza veticalmente */
         padding: 0px 20px 0px 20px; /* espao interno nas laterias */
-        background-color: rgb(207, 240, 241); /* cor do fundo */
-        color: rgb(0, 0, 0); /* cor do numero */
+        background-color: gray; /* cor do fundo */
+        color: white; /* cor do numero */
         font-size: 2em; /* numero grande e visível */
         border-top-left-radius: 10px;
         border-top-right-radius: 10px; melhorar 
@@ -58,16 +57,16 @@
         border: none; 
         border-radius: 5px;
         cursor: pointer; /* muda o curso ao passar em cima */
-        background-color: rgb(253, 220, 237); 
+        background-color: gainsboro; 
     }
 
     .divDosbotoes button:hover{
-        background-color: rgb(255, 255, 255);
+        background-color: cadetblue;
     }
 
     #botaoIgual{
         grid-row: span 4; /* ocupa 4 linhas do grid */
-        background-color: #ef8080;
+        background-color: #80ef80;
         color: white;
     }
 
