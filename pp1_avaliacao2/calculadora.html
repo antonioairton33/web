@@ -8,64 +8,67 @@
 </head>
 <style>
     body{
-        display: flex; /* transforma em container flexivel e permite alterar a posicao do unico filho do body que é calculadora apenas horizontal*/
+        display: flex; 
 
-        justify-content: center; /* centraliza a calculadora horizontalmente*/
+        justify-content: center; 
 
-        align-items: center; /* centraliza a calculadora verticalmente */
+        align-items: center; 
 
-        height: 100vh; /* ocupar toda a tela para permiter a calculadora ficar no meio*/
+        height: 100vh; 
 
-        margin: 0; /* remove os espaçmentos */
+        margin: 0;
         background-color: bisque;
 
     }
 
     .divDacalculadora{
-        display: grid; /* transforma em um container grid  mais personalizavel por linhas e colunas*/
-        grid-template-rows: 100px auto; /* define duas linhas, display 100px e linha dos botões automatico*/
+        display: grid; 
+        grid-template-rows: 100px auto; 
 
-        width: 300px; /*largura da calculadora*/
-        border-radius: 10px; /* borda arredondadas */
+        width: 300px; 
+        border-radius: 10px;
 
-        background-color: rgb(255, 255, 255); /* cor de fundo */
+        background-color: rgb(255, 255, 255); 
 
     }
 
     .divDatela{
-        display: flex; /* permite alinhar o numero facilmento horizontal*/
-        justify-content: flex-end; /* alinha o numero ao final (direita)*/
-        align-items: center; /* centraliza veticalmente */
-        padding: 0px 20px 0px 20px; /* espao interno nas laterias */
-        background-color: gray; /* cor do fundo */
-        color: white; /* cor do numero */
-        font-size: 2em; /* numero grande e visível */
+        display: flex; 
+        justify-content: flex-end; 
+        align-items: center; 
+        padding: 0px 20px 0px 20px; 
+        background-color: gray; 
+        color: white; 
+        font-size: 2em; 
         border-top-left-radius: 10px;
-        border-top-right-radius: 10px; melhorar 
+        border-top-right-radius: 10px;
     }
 
     .divDosbotoes{
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* cada coluna tem a mesma largura 1fr fraçao do espaco disponivel */
-        gap: 10px; /* espaco entre os botoes */
-        padding: 10px; /* organiza o botoes em relaçoes a borda da calculadora */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 10px; 
+        padding: 10px; 
     }
 
     .divDosbotoes button{
-        font-size: 1.5em; /* relativo ao elemento pai mudar fonte do botao */
+        font-size: 1.5em; 
         padding: 20px; 
         border: none; 
         border-radius: 5px;
-        cursor: pointer; /* muda o curso ao passar em cima */
+        cursor: pointer; 
         background-color: gainsboro; 
     }
 
     .divDosbotoes button:hover{
         background-color: cadetblue;
     }
+    .divDosbotoes button:active{
+        background-color: rgb(84, 126, 128);
+    }
 
     #botaoIgual{
-        grid-row: span 4; /* ocupa 4 linhas do grid */
+        grid-row: span 4; 
         background-color: #80ef80;
         color: white;
     }
@@ -108,39 +111,51 @@
     </div>
 </body>
 <script>
-    //seleciona a tela pela declarada pela const que não muda referencia e pega o primeiro elemento por isso nao precisa do query selectorall.
+   
     const tela = document.querySelector(".divDatela");
     
-    //seleciona todos os botões e novamente utiliza const para nao mudar refeerencia e pega todos os elementos que combinam e retorna uma lista (NodeList) por isso utilizar o queryselectorall.
+    
     const botoes = document.querySelectorAll(".divDosbotoes button")
 
-    //variável para guardar a expressão tudo que o usuario apertar:
+   
     let expressao = "";
-    let resultadoAnterior = null; //guarda o resultado apos apertar o =
-    let deveLimparTela = false; //indica se a tela precisar limpar ao iniciar nova operaçao
+    let resultadoAnterior = null; 
+    let deveLimparTela = false; 
+    
+    function validarExpressao(expr) {
 
-    botoes.forEach(botao => { //for each pecorre todos os botoes
+        if (!/^[0-9+\-*/.]+$/.test(expr)) return false;
+        
+        return true;
+    }
+
+    botoes.forEach(botao => { 
         botao.addEventListener("click", () => {
-            //decidindo oque fazer quando clicar
-            console.log(botao.textContent); //teste para mostrar os botoes clicados
+    
+            console.log(botao.textContent); 
 
-            const valor = botao.textContent; //coleta o texto do botao
-            
+            const valor = botao.textContent; 
             if(valor === "C"){
-                //vai limpar a tela para recomeçar
+
                 expressao = '';
                 tela.textContent = '0';
             } else if(valor === "="){
-                //calcula o resultado
-                //try evita que o programa quebre se a expressao estiver 
-                //try siginifica tente executar ese codigo
+
+                
+                if (!validarExpressao(expressao)) {
+                    tela.textContent = "Inválido";
+                    expressao = '';
+                    return;
+                }
+
                 try{
-                    //eval  funcao pronta para expressao matematica
-                    tela.textContent = eval(expressao); // perigoso e vamos entender depois
-                } catch { //catch significa "se acontecer algum erro, execute este outro codigo."
+
+                    tela.textContent = expressao = eval(expressao);
+                    
+                } catch { 
                     tela.textContent = "Erro";
                     expressao = '';
-                    //isso permite que se houver algum erro a pagina limpe a expressao e possa recomeçar
+                    
                 }
             } else {
                 let valorFinal = valor;
@@ -150,9 +165,9 @@
                 } else if(valor === "÷"){
                     valorFinal = "/";
                 }
-                //adiocina o valor à expressão
+                
                 expressao += valorFinal;
-                //mostra na tela o x tbm ao inves do * e ÷ por /
+                
                 let expressaoVisivel = expressao
                     .replace (/\*/g, "x")
                     .replace (/\//g, "÷")

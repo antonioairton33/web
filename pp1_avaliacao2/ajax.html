@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Filmes Ajax</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* centraliza tudo horizontalmente */
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        /* Container da busca */
+        .busca {
+            margin-bottom: 30px;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 8px 12px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        /* Container dos filmes */
+        #filmes {
+            display: flex; /* coloca os filmes em linha */
+            flex-wrap: wrap; /* permite quebrar linha quando não cabe */
+            justify-content: center; /* centraliza os filmes */
+            gap: 20px; /* espaço entre os filmes */
+        }
+
+        .filme {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            width: 150px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .filme img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .TituloFilme {
+            font-weight: bold;
+            margin: 5px 0 2px 0;
+        }
+
+        .AnoFilme {
+            color: gray;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="busca">
+        <h2>Busca de filmes</h2>    
+        <label for="titulo">Título do filme:</label>
+        <input type="text" id="titulo" name="titulo">
+        <button id="buscar">Buscar</button>
+    </div>
+
+    <div id="filmes"></div>
+    
+    <script>
+        let inputfilmes = document.querySelector("#titulo");
+        let divResultado = document.querySelector("#filmes");
+        let buscar = document.querySelector("#buscar");
+        
+        buscar.addEventListener("click", ()=>{
+            fetch("http://www.omdbapi.com/?s=" + inputfilmes.value + "&apikey=f77bfada")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                divResultado.innerHTML = "";
+
+                if(data.Search) { 
+                    data.Search.forEach(filme => {
+                        let divfilme = `
+                        <div class="filme">
+                            <img src="${filme.Poster}" alt="${filme.Title}" class="imgPoster">
+                            <p class="TituloFilme">${filme.Title}</p>
+                            <p class="AnoFilme">${filme.Year}</p>
+                        </div>`;
+                        divResultado.innerHTML += divfilme;
+                    });
+                } else {
+                    divResultado.innerHTML = "<p>Nenhum filme encontrado.</p>";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
